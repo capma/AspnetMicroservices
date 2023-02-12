@@ -13,6 +13,7 @@ namespace Ordering.API.Extensions
             Action<TContext, IServiceProvider> seeder, int? retry = 0) where TContext : DbContext
         {
             int retryForAvailability = retry.Value;
+
             using(var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
